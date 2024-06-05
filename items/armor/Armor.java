@@ -6,8 +6,7 @@ public abstract class Armor extends Item {
 
     private final int defense;
 
-    public Armor(int value,
-                 int defense) {
+    public Armor(int value, int defense) {
         super(value);
         this.defense = defense;
     }

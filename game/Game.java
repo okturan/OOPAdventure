@@ -62,7 +62,9 @@ public class Game {
 
     private void displayWelcomeMessage() {
         System.out.println("\n########################");
-        System.out.printf("Welcome, %s %s! %n", player.getCharacter().getClass().getSimpleName(), player.getUserName());
+        System.out.printf("Welcome, %s %s! %n",
+                player.getCharacter().getClass().getSimpleName(),
+                player.getUserName());
         System.out.println("########################");
     }
 

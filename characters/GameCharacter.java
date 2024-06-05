@@ -7,9 +7,7 @@ public abstract class GameCharacter {
     private int health;
     private int money;
 
-    public GameCharacter(int damage,
-                         int health,
-                         int money) {
+    public GameCharacter(int damage, int health, int money) {
         this.damage = damage;
         this.health = health;
         this.maxHealth = health; // Initialize maxHealth to initial health value

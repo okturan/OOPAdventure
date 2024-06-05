@@ -9,8 +9,7 @@ public class Player {
     private final GameCharacter character;
     private final Inventory inventory;
 
-    public Player(String userName,
-                  GameCharacter character) {
+    public Player(String userName, GameCharacter character) {
         this.userName = userName;
         this.character = character;
         this.inventory = new Inventory();

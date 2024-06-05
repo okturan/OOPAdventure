@@ -6,8 +6,7 @@ public abstract class Weapon extends Item {
 
     private final int damage;
 
-    public Weapon(int value,
-                  int damage) {
+    public Weapon(int value, int damage) {
         super(value);
         this.damage = damage;
     }

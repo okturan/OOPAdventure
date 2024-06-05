@@ -4,13 +4,6 @@ This project is a simple text-based adventure game created for a coding assignme
 
 ## How to Run
 
-Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/simple-adventure-game.git
-cd simple-adventure-game
-```
-
 Compile the code:
 
 ```bash

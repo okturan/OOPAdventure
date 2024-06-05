@@ -33,8 +33,15 @@ public class Shop extends SafeLocation {
 
     @Override
     public void enterLocation(Player player) {
-        displayItemsForSale(player);
-        processPurchase(player, getItemChoiceFromUser());
+        while (true) {
+            displayItemsForSale(player);
+            int choice = getItemChoiceFromUser();
+            if (choice == 0) {
+                System.out.println("Exiting the shop.");
+                break;
+            }
+            processPurchase(player, choice);
+        }
     }
 
     private void displayItemsForSale(Player player) {
@@ -43,11 +50,12 @@ public class Shop extends SafeLocation {
         for (Map.Entry<Integer, Item> entry : ITEMS_FOR_SALE.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
+        System.out.println("0: Exit shop");
     }
 
     private void processPurchase(Player player, int choice) {
         if (!ITEMS_FOR_SALE.containsKey(choice)) {
-            System.out.println("Invalid choice.");
+            System.out.println("Invalid choice. Please select a valid item number.");
             return;
         }
 
@@ -81,7 +89,20 @@ public class Shop extends SafeLocation {
 
     private int getItemChoiceFromUser() {
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter the number of the item you wish to purchase: ");
-        return input.nextInt();
+        while (true) {
+            try {
+                System.out.print("Enter the number of the item you wish to purchase or 0 to exit: ");
+                String userInput = input.nextLine();
+                int choice = Integer.parseInt(userInput.trim());
+
+                if (choice < 0 || choice > ITEMS_FOR_SALE.size()) {
+                    System.out.println("Invalid choice. Please select a valid item number.");
+                } else {
+                    return choice;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+            }
+        }
     }
 }

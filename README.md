@@ -14,25 +14,25 @@ cd simple-adventure-game
 Compile the code:
 
 ```bash
-javac Main.java
+javac -d ../out/OOPAdventure Main.java
 ```
 
 Run the game:
 
 ```bash
-java Main
+java -cp ../out/OOPAdventure/ Main
 ```
 
 ## Project Structure
 
-- **Main.java**: Entry point of the application.
-- **game/Game.java**: Manages the main game loop and initialization.
-- **players/Player.java**: Represents the player with attributes like username, character, and inventory.
-- **players/UserInteraction.java**: Handles user input and interactions.
-- **characters/**: Contains various character classes (e.g., Samurai, Knight, Archer).
-- **items/**: Defines item-related classes including weapons, armor, and drops.
-- **locations/**: Includes safe and combat location classes.
-- **enemies/**: Defines enemy types encountered in combat locations.
+- **src/Main.java**: Entry point of the application.
+- **src/game/Game.java**: Manages the main game loop and initialization.
+- **src/players/Player.java**: Represents the player with attributes like username, character, and inventory.
+- **src/players/UserInteraction.java**: Handles user input and interactions.
+- **src/characters/**: Contains various character classes (e.g., Samurai, Knight, Archer).
+- **src/items/**: Defines item-related classes including weapons, armor, and drops.
+- **src/locations/**: Includes safe and combat location classes.
+- **src/enemies/**: Defines enemy types encountered in combat locations.
 
 ## Classes Overview
 
